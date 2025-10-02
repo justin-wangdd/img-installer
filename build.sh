@@ -21,7 +21,8 @@ REPO="wukongdaily/img-installer"
 TAG="2025-03-12"
 OUTPUT_PATH="armbian/armbian.img.xz"
 
-DOWNLOAD_URL=$(curl -s https://api.github.com/repos/$REPO/releases/tags/$TAG | jq -r '.assets[] | select(.name == "'"$FILE_NAME"'") | .browser_download_url')
+#DOWNLOAD_URL=$(curl -s https://api.github.com/repos/$REPO/releases/tags/$TAG | jq -r '.assets[] | select(.name == "'"$FILE_NAME"'") | .browser_download_url')
+DOWNLOAD_URL=https://mirrors.nju.edu.cn/armbian-releases/uefi-x86/archive/Armbian_25.8.1_Uefi-x86_bookworm_current_6.12.41_minimal.img.xz
 
 if [[ -z "$DOWNLOAD_URL" ]]; then
   echo "错误：未找到文件 $FILE_NAME"
